@@ -263,3 +263,20 @@ class MoundVisits(MLBBaseModel):
     """
     away: dict = {}
     home: dict = {}
+
+class AbsChallenges(MLBBaseModel):
+    """
+    A class to represent the abs challenges for a game.
+
+    Attributes
+    ----------
+    has_challenges : bool
+        If this game has ABS challenges remaining.
+    home : dict
+        Home team abs challenges.
+    away : dict
+        Away team abs challenges.
+    """
+    has_challenges: bool = Field(alias="hasChallenges")
+    away: dict = {}
+    home: dict = {}

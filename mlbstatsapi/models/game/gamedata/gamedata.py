@@ -14,6 +14,7 @@ from .attributes import (
     GameFlags,
     GameProbablePitchers,
     MoundVisits,
+    AbsChallenges,
 )
 
 
@@ -57,7 +58,7 @@ class GameData(MLBBaseModel):
         Secondary data caster for this game.
     mound_visits : MoundVisits
         Mound visits for this game.
-    abs_challenges : List[dict]
+    abs_challenges : AbsChallenges
         ABS challenges for this game.
     """
     game: GameDataGame
@@ -77,7 +78,7 @@ class GameData(MLBBaseModel):
     official_scorer: Optional[Person] = Field(default=None, alias="officialScorer")
     primary_data_caster: Optional[Person] = Field(default=None, alias="primaryDataCaster")
     secondary_data_caster: Optional[Person] = Field(default=None, alias="secondaryDataCaster")
-    abs_challenges: Optional[List[dict]] = Field(default=None, alias="absChallenges")
+    abs_challenges: Optional[AbsChallenges] = Field(default=None, alias="absChallenges")
 
     @model_validator(mode='before')
     @classmethod
